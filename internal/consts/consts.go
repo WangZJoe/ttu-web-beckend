@@ -1,5 +1,7 @@
 package consts
 
+import "time"
+
 const (
 	uid        = "app"
 	MQTTBroker = "mqtt://sinpower.3322.org:11883"
@@ -25,6 +27,20 @@ const (
 	Received_alarm_data_get    = "database/get/response/" + uid + "/SOE"
 	Received_getParams         = "TestApp/get/response/" + uid + "/params"
 	Received_setParams         = "TestApp/set/response/" + uid + "/params"
+)
+const (
+	ContextKey = "ContextKey"
+)
+
+const (
+	JwtPrivateKey = "^:P}*39a3LWxzXq="
+	JwtExpTime    = time.Minute * 1
+	JwtIssuerName = "niubx"
+)
+
+const (
+	JwtHeaderKey    = "Authorization"
+	JwtHeaderPrefix = "Bearer "
 )
 
 var ModelConfig = map[string]struct {

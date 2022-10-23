@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/gogf/gf/v2/util/gconv"
+	"log"
 	"ttu-backend/apiv1"
 	"ttu-backend/internal/model"
 	"ttu-backend/internal/service"
@@ -16,6 +17,7 @@ var (
 type hBase struct{}
 
 func (h *hBase) DeviceList(ctx context.Context, req *apiv1.DeviceListReq) (res *apiv1.DeviceListRes, err error) {
+	log.Println("shit")
 	in := model.BaseDeviceListIn{}
 	_ = gconv.Struct(req, &in)
 	out, err := service.Base().BaseDeviceList(ctx, in)

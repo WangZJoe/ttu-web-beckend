@@ -3,8 +3,39 @@ server:
   openapiPath: "/api.json"
   swaggerPath: "/swagger"
 
+  LogPath: "/log"
+  LogStdout: false
+  ErrorStack: true
+  ErrorLogEnabled: true
+  ErrorLogPattern: "error.{Ymd}.log"
+  AccessLogEnabled: true
+  AccessLogPattern: "access.{Ymd}.log"
+
 logger:
   level : "all"
   stdout: true
 
+user:
+  id: "admin"
+  password: "12345"
+
+mqtt:
+  MQTTLAN: "mqtt://47.110.134.175:8183"
+  MQTTQos: 0x0
+
+pub_topics:
+  Publish_register_get: "app/get/request/database/register"
+  Publish_realtime_data_get: "app/get/request/database/realtime"
+  Publish_history_data_get: "app/get/request/database/history"
+  Publish_alarm_data_get: "app/get/request/database/SOE"
+  Publish_getParams: "app/get/request/TestApp/params"
+  Publish_setParams: "app/set/request/TestApp/params"
+
+sub_topics:
+  Received_register_get      : "database/get/response/app/register"
+  Received_realtime_data_get : "database/get/response/app/realtime"
+  Received_history_data_get  : "database/get/response/app/history"
+  Received_alarm_data_get    : "database/get/response/app/SOE"
+  Received_getParams         : "TestApp/get/response/app/params"
+  Received_setParams         : "TestApp/set/response/app/params"
 

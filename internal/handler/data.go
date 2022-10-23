@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/gogf/gf/v2/util/gconv"
+	"log"
 	"ttu-backend/apiv1"
 	"ttu-backend/internal/model"
 	"ttu-backend/internal/service"
@@ -99,6 +100,7 @@ _:
 
 func (h *hData) DataTopo(ctx context.Context, req *apiv1.DataTopoReq) (res *apiv1.DataTopoRes, err error) {
 	res = &apiv1.DataTopoRes{}
+	log.Println("shit")
 	in := "{ \"token\":\"123\",\"timestamp\":\"2022-03-21T09:30:08.230+0800\",\"body\":[]}]}"
 	modelName := []string{"LTU", "Switch"}
 _:

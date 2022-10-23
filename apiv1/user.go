@@ -6,11 +6,13 @@ type UserLoginReq struct {
 	g.Meta   `path:"/user/login" tags:"User" method:"post" summary:"用户登录"`
 	Username string `json:"username" v:"required" title:"用户名"`
 	Password string `json:"password" v:"required" title:"密码"`
+	Token    string `json:"token" v:"required" title:"token身份码"`
 }
 
 type UserLoginRes struct {
-	Code   string `json:"code" title:"状态code" dc:"成功是1，失败是0"`
-	Status string `json:"status" title:"登录情况"`
+	Code     string `json:"code" title:"状态code" dc:"成功是1，失败是0"`
+	Status   string `json:"status" title:"登录情况"`
+	UserGrid string
 }
 
 type UserChangePasswordReq struct {
